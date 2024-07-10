@@ -49,7 +49,9 @@ PROJECT_APPS = [
 THIRD_PARTY_APPS = [
     'rest_framework',
     'djoser',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+   # "phonenumbers",
+    'django_countries'
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS + THIRD_PARTY_APPS
