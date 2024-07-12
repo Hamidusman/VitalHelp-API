@@ -44,6 +44,7 @@ DEFAULT_APPS = [
 PROJECT_APPS = [
     'apps.user',
     'apps.core',
+    'apps.chat',
 ]
 
 THIRD_PARTY_APPS = [
