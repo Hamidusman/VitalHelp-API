@@ -53,7 +53,6 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
    # "phonenumbers",
     'django_countries',
-    'debug_toolbar',
     'channels',
 ]
 

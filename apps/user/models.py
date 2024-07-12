@@ -29,7 +29,7 @@ class User(AbstractBaseUser):
     
 
 
-class Profile(models.Model):
+class Patient(models.Model):
     class Gender(models.TextChoices):
         MALE = "Male", _('Male')
         FEMALE = "Female", _('Female')
@@ -41,7 +41,20 @@ class Profile(models.Model):
     medical_history = models.TextField(verbose_name = _("Medical History"), help_text = _("Tell us of any relevant medical report. Allergies, surgeries, chronic illness, etc") )
     dob = models.DateField(verbose_name=_("Date of birth"))
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
-    is_patient = models.BooleanField(verbose_name=_("A Patient"), default=True, blank=False, null=False)
-    is_staff =  models.BooleanField(verbose_name=_("A Staff"), default=True, blank=False, null=False)
-    is_active = models.BooleanField(verbose_name=_("Is Active"), default=True, blank=False, null=False)
+    patient = models.BooleanField(default=True)
+
+
+class Doctor(models.Model):
+    class Gender(models.TextChoices):
+        MALE = "Male", _('Male')
+        FEMALE = "Female", _('Female')
+    firstname = models.CharField(max_length=50)
+    lastname = models.CharField(max_length=50)
+    gender = models.CharField(verbose_name=_("Gender"), choices=Gender.choices, max_length=50)
+    country = CountryField(verbose_name = _("Country"), default="NG", blank=False, null=False)
+    phone_number = models.IntegerField(verbose_name = _("Phone Number"), blank=False, null=False)
+    specialty = models.TextField(verbose_name = _("specialty"))
+    dob = models.DateField(verbose_name=_("Date of birth"))
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
+    staff= models.BooleanField(default=True)
 
