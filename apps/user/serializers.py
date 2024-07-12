@@ -13,7 +13,7 @@ class UserCreateSerializer(BaseUserCreateSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['firstname', 'lastname', 
+        fields = ['firstname', 'lastname',
                   'gender', 'user', 'country', 'dob',
                   'medical_history', 'phone_number', 'is_patient',
                   'is_staff'] 
