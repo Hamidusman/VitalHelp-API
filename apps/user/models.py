@@ -43,6 +43,9 @@ class Patient(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     patient = models.BooleanField(default=True)
 
+    def __str__(self) -> str:
+        return self.firstname + ' ' + self.lastname
+
 
 class Doctor(models.Model):
     class Gender(models.TextChoices):
@@ -57,4 +60,10 @@ class Doctor(models.Model):
     dob = models.DateField(verbose_name=_("Date of birth"))
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     staff= models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return self.firstname + '' + self.lastname
+      
+
+
 
