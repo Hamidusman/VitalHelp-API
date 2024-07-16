@@ -88,10 +88,19 @@ class Patient(User):
     def __str__(self) -> str:
         return self.firstname + ' ' + self.lastname
 
+    def __str__(self) -> str:
+        return self.firstname + ' ' + self.lastname
+
 
 class Doctor(models.Model):
     specialty = models.TextField(verbose_name = _("specialty"))
     is_staff= models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return self.firstname + '' + self.lastname
+      
+
+
 
     def __str__(self) -> str:
         return self.firstname + '' + self.lastname
