@@ -43,8 +43,6 @@ DEFAULT_APPS = [
 
 PROJECT_APPS = [
     'apps.user',
-    'apps.core',
-    'apps.chat',
 ]
 
 THIRD_PARTY_APPS = [
@@ -116,10 +114,11 @@ SIMPLE_JWT = {
 }
 
 DJOSER = {
+    "LOGIN_FIELD": "email",
     'USER_ID_FIELD': 'id',
     'USER_CREATE_PASSWORD_RETYPE': True,
     'SERIALIZERS': {
-        'user_create': 'apps.users.serializers.UserCreateSerializer',
+        'user_create': 'apps.user.serializers.UserCreateSerializer',
         'user': 'djoser.serializers.UserSerializer',
         'current_user': 'djoser.serializers.UserSerializer',
     },
